@@ -13,6 +13,6 @@ declare(strict_types=1);
 | registered without a real application.
 */
 
-use Fengz\LaravelLang\Tests\TestCase;
+use Fengz\Lang\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

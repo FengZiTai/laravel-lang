@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fengz\LaravelLang;
+namespace Fengz\Lang;
 
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;

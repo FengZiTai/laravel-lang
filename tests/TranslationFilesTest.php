@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fengz\LaravelLang\LangServiceProvider;
+use Fengz\Lang\LangServiceProvider;
 
 /**
  * Resolve the bundled zh_CN source directory.

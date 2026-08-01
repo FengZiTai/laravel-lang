@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fengz\LaravelLang\Tests;
+namespace Fengz\Lang\Tests;
 
-use Fengz\LaravelLang\LangServiceProvider;
+use Fengz\Lang\LangServiceProvider;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 

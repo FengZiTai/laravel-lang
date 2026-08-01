@@ -1,8 +1,8 @@
-# fengz/laravel-lang-zh-cn
+# fengz/laravel-lang
 
-![Packagist Version](https://img.shields.io/packagist/v/fengz/laravel-lang-zh-cn?label=Packagist)
-![Packagist PHP Version](https://img.shields.io/packagist/php-v/fengz/laravel-lang-zh-cn)
-![License](https://img.shields.io/packagist/l/fengz/laravel-lang-zh-cn)
+![Packagist Version](https://img.shields.io/packagist/v/fengz/laravel-lang?label=Packagist)
+![Packagist PHP Version](https://img.shields.io/packagist/php-v/fengz/laravel-lang)
+![License](https://img.shields.io/packagist/l/fengz/laravel-lang)
 ![Tests](https://img.shields.io/badge/tests-Pest-7c3aed)
 
 Laravel 简体中文（zh_CN）语言文件包。提供 Laravel 内置翻译键的简体中文译文，通过 `vendor:publish` 发布到你的项目，发布后可自由修改，升级包不会覆盖你的定制。
@@ -10,7 +10,7 @@ Laravel 简体中文（zh_CN）语言文件包。提供 Laravel 内置翻译键�
 ## 安装
 
 ```bash
-composer require fengz/laravel-lang-zh-cn
+composer require fengz/laravel-lang
 ```
 
 包通过 Laravel 包发现自动注册 `LangServiceProvider`，无需手动注册。

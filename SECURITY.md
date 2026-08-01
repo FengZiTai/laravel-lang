@@ -28,7 +28,7 @@ You should receive an initial response within **72 hours**. Please do not disclo
 
 ## Scope
 
-This policy covers the `fengz/laravel-lang-zh-cn` source code. As a language-file package, it contains no credentials, secrets, or runtime data flows. It does **not** cover:
+This policy covers the `fengz/laravel-lang` source code. As a language-file package, it contains no credentials, secrets, or runtime data flows. It does **not** cover:
 
 - Issues arising from edits you make to published language files in your own application.
 - Vulnerabilities in Laravel, PHP, or third-party dependencies — report those upstream.

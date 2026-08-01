@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fengz\LaravelLang\LangServiceProvider;
+use Fengz\Lang\LangServiceProvider;
 use Illuminate\Support\Facades\Artisan;
 
 describe('LangServiceProvider', function () {

@@ -1,12 +1,12 @@
 # Contributing
 
-Thank you for considering contributing to `fengz/laravel-lang-zh-cn`! This document describes the local workflow.
+Thank you for considering contributing to `fengz/laravel-lang`! This document describes the local workflow.
 
 ## Development Setup
 
 ```bash
 git clone <repo-url>
-cd laravel-lang-zh-cn
+cd laravel-lang
 composer install
 ```
 

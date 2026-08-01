@@ -1,5 +1,5 @@
 {
-    "name": "fengz/laravel-lang-zh-cn",
+    "name": "fengz/laravel-lang",
     "description": "Simplified Chinese (zh_CN) language files for Laravel.",
     "type": "library",
     "license": "MIT",
@@ -31,18 +31,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Fengz\\LaravelLang\\": "src/"
+            "Fengz\\Lang\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Fengz\\LaravelLang\\Tests\\": "tests/"
+            "Fengz\\Lang\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Fengz\\LaravelLang\\LangServiceProvider"
+                "Fengz\\Lang\\LangServiceProvider"
             ]
         }
     },
