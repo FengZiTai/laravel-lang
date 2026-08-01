@@ -21,12 +21,18 @@ composer require fengz/laravel-lang
 php artisan vendor:publish --tag=lang.zh-CN
 ```
 
-文件会发布到项目的 `lang/zh_CN/` 目录，包含 Laravel 默认四件套：
+文件会发布到项目的 `lang/` 目录：
+
+**PHP 翻译文件**（发布到 `lang/zh_CN/`）：
 
 - `auth.php` — 认证相关提示
 - `pagination.php` — 分页
 - `passwords.php` — 密码重置
 - `validation.php` — 表单验证
+
+**JSON 翻译文件**（发布到 `lang/zh_CN.json`）：
+
+- 框架错误页（419/403/404/500/503）、邮件模板（密码重置、邮箱验证）、分页导航等 43 个键
 
 ## 配置默认语言
 

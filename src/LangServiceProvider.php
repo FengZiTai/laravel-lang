@@ -12,7 +12,7 @@ class LangServiceProvider extends ServiceProvider
     /**
      * Package version, surfaced in `php artisan about`.
      */
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.2.0';
 
     /**
      * Publish tag used by `php artisan vendor:publish --tag=lang.zh-CN`.
@@ -26,7 +26,10 @@ class LangServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes(
-                [$this->langPath() => lang_path('zh_CN')],
+                [
+                    $this->langPath('zh_CN') => lang_path('zh_CN'),
+                    $this->langPath('zh_CN.json') => lang_path('zh_CN.json'),
+                ],
                 self::TAG,
             );
         }
@@ -35,10 +38,12 @@ class LangServiceProvider extends ServiceProvider
     }
 
     /**
-     * Resolve the bundled zh_CN source directory.
+     * Resolve a path relative to the bundled lang/ directory.
      */
-    protected function langPath(): string
+    protected function langPath(string $path = ''): string
     {
-        return dirname(__DIR__).DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.'zh_CN';
+        $base = dirname(__DIR__).DIRECTORY_SEPARATOR.'lang';
+
+        return $path === '' ? $base : $base.DIRECTORY_SEPARATOR.$path;
     }
 }

@@ -120,4 +120,79 @@ describe('translation files', function () {
         'passwords.php',
         'validation.php',
     ]);
+
+    it('ships a valid zh_CN.json with every framework view key', function () {
+        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.'zh_CN.json';
+
+        expect(file_exists($path))->toBeTrue('Missing file: zh_CN.json');
+
+        $decoded = json_decode((string) file_get_contents($path), true);
+
+        expect($decoded)->toBeArray('zh_CN.json must decode to an array')
+            ->and(json_last_error())->toBe(JSON_ERROR_NONE);
+
+        // Authoritative key set used by Laravel's framework views (error pages,
+        // mail templates, pagination) — aligned with caouecs/Laravel-lang.
+        $expected = [
+            'A decryption key is required.',
+            'All rights reserved.',
+            'Encrypted environment file already exists.',
+            'Encrypted environment file not found.',
+            'Environment file already exists.',
+            'Environment file not found.',
+            'errors',
+            'Forbidden',
+            'Go to page :page',
+            'Hello!',
+            'If you did not create an account, no further action is required.',
+            'If you did not request a password reset, no further action is required.',
+            'Invalid filename.',
+            'Invalid JSON was returned from the route.',
+            'Location',
+            'Login',
+            'Logout',
+            'Not Found',
+            'of',
+            'Page Expired',
+            'Pagination Navigation',
+            'Payment Required',
+            'Please click the button below to verify your email address.',
+            'Regards,',
+            'Register',
+            'Reset Password',
+            'Reset your password',
+            'results',
+            'Server Error',
+            'Service Unavailable',
+            'Showing',
+            'The given data was invalid.',
+            'The response is not a streamed response.',
+            'The response is not a view.',
+            'This password reset link will expire in :count minutes.',
+            'to',
+            'Toggle navigation',
+            'Too Many Requests',
+            'Unauthorized',
+            'Verify Email Address',
+            'Verify your email address',
+            'Whoops!',
+            'You are receiving this email because we received a password reset request for your account.',
+        ];
+
+        $actual = array_keys($decoded);
+        $missing = array_diff($expected, $actual);
+        $extra = array_diff($actual, $expected);
+
+        expect($missing)->toBeEmpty('zh_CN.json is missing keys: '.implode(', ', $missing));
+        expect($extra)->toBeEmpty('zh_CN.json has extra keys: '.implode(', ', $extra));
+
+        // Placeholders must round-trip.
+        foreach ($decoded as $key => $value) {
+            preg_match_all('/:[a-zA-Z0-9_]+/', (string) $key, $keyPh);
+            preg_match_all('/:[a-zA-Z0-9_]+/', (string) $value, $valPh);
+            sort($keyPh[0]);
+            sort($valPh[0]);
+            expect($valPh[0])->toBe($keyPh[0], "zh_CN.json placeholder mismatch at '{$key}'");
+        }
+    });
 });
