@@ -1,0 +1,64 @@
+{
+    "name": "fengz/laravel-lang-zh-cn",
+    "description": "Simplified Chinese (zh_CN) language files for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "lang",
+        "localization",
+        "zh-CN",
+        "chinese",
+        "translation"
+    ],
+    "authors": [
+        {
+            "name": "FengZ"
+        }
+    ],
+    "require": {
+        "php": "^8.5",
+        "illuminate/support": "^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.20",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpstan/extension-installer": "^1.4",
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fengz\\LaravelLang\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fengz\\LaravelLang\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fengz\\LaravelLang\\LangServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "pest",
+        "test:coverage": "pest --coverage",
+        "format": "pint",
+        "analyse": "phpstan analyse"
+    }
+}

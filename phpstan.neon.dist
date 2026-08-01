@@ -1,0 +1,10 @@
+parameters:
+    level: max
+
+    paths:
+        - src/
+
+    # Treat unchecked errors as errors (do not silently ignore).
+    reportUnmatchedIgnoredErrors: true
+
+    tmpDir: .phpstan
