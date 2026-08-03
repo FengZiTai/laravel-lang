@@ -29,7 +29,7 @@ describe('LangServiceProvider', function () {
 
         // PHP translation file (validation/auth/pagination/passwords).
         expect(__('validation.required', ['attribute' => 'name']))
-            ->toBe('name 字段必填。')
+            ->toBe('name 不能为空。')
             ->and(__('auth.failed'))->toBe('这些凭据与我们的记录不匹配。')
             ->and(__('pagination.next'))->toBe('下一页 &raquo;')
             ->and(__('passwords.token'))->toBe('此密码重置令牌无效。');
